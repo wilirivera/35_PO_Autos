@@ -15,7 +15,7 @@ public class PrincipalAutos {
         vehiculo_1.color = "rojo";
         
         //Cargar atributos adicionales de movimiento. velocidad y Aceleracion. metodo set 
-        vehiculo_1.setMovimiento(110, 20);
+        vehiculo_1.setMovimiento(110, 20,5);
         
       
     
@@ -46,6 +46,9 @@ public class PrincipalAutos {
         
         // Obtener movimiento
         vehiculo_1.getMovimiento();
+        
+        // Disminuir velocidad
+        vehiculo_1.ReducirVelocidad();
         
         // Obtener luces
         vehiculo_1.luzActiva();

@@ -12,15 +12,17 @@ public class Autos {
     public String marca;
     public String modelo;
     public int antiguedad;
+    public String matricula;
     public String color;
     public int velocidadInicial;
     public int velocidadActual;
     public int velocidadfinal;
     public int aceleracion;
+    public int desaceleracion;
     public boolean encendido;
-    public String matricula;
+    public boolean frenado;
     public boolean luces;
-    public boolean test;
+    public float test;
     
     // CONSTRUCTOR. Creación del constructor de la clase Autos
     Autos (String placa, String modelo){
@@ -91,19 +93,26 @@ public class Autos {
     
     
     
-    //6-Ajustar movimiento
-    public  void setMovimiento(int velActual, int aceleracion){
+    //6-Ajustar movimiento. Velocidad y Aceleracion del vehiculo
+    public  void setMovimiento(int velActual, int aceleracion, int desaceleracion){
         this.velocidadActual = velActual;
         this.aceleracion = aceleracion;
+        this.desaceleracion = desaceleracion;
+        
+        // Ajuste de Velocidad Final por aceleracion
         this.velocidadfinal = (this.velocidadInicial + this.velocidadActual + this.aceleracion); 
+        
+        // Ajuste de Velocidad Final por aceleracion
+        this.desaceleracion = (this.velocidadfinal - this.desaceleracion);
+        
     }// end get velocidadAct
 
     
-    //6-Acelerar vehiculo y obtener velocidad actual
+    //7-Acelerar vehiculo y obtener velocidad actual
      public  void getMovimiento(){
          
          // Mostra resultado
-        System.out.println("el vehiculo "+this.marca + " " + this.modelo + " " + " tiene se esta moviendo asi: " + "\n");
+        System.out.println("el vehiculo "+this.marca + " " + this.modelo + " " + " se esta moviendo asi: " + "\n");
         System.out.println("inicio con velocidad de: " + this.velocidadInicial);
         System.out.println("alcanzo velocidad de: " + this.velocidadActual);
         System.out.println("Acelero a: " + this.aceleracion);
@@ -122,9 +131,20 @@ public class Autos {
         
     }//end set luces
     
-    //8-Abrir puerta
+    //9-Frenar Vehiculo. reducir velocidad
+    public void ReducirVelocidad(){
+        if (this.frenado == false){
+
+            this.frenado = true;
+            // Mostra resultado
+            System.out.println("el vehiculo "+this.marca + " " + this.modelo + " " + " Reduce velocidada y se mueve a: " +this.desaceleracion );
+              
+        }// end if
+        
+    }// end ReducirVelocidad
     
-    //9-reducir velocidad
+    //10-Controlador de la velocidad
+    while()
     
     
     
